@@ -151,12 +151,12 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
 [Node.js]: https://nodejs.org/en/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Node-url]: https://node.org/
+[Node-url]: https://img.shields.io/badge/Node-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Babylon.js]: https://www.babylonjs.com/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Babylon-url]: https://www.babylonjs.com/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Terraform.io]: https://www.terraform.io/
+[Vue-url]: https://vuejs.org
+[Terraform.io]: https://img.shields.io/badge/Terraform.io-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Terraform-url]: https://www.terraform.io/
-[Docker.com]: https://www.docker.com/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Docker.com]: https://img.shields.io/badge/Docker.com-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Docker-url]: https://www.docker.com/
