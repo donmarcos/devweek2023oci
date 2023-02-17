@@ -1,6 +1,6 @@
 <template>
   <div v-if="userTools.length > 0">
-    <div :key="userTools.length">
+    <div :key="userTools.length" class="ToolTracker">
       <table>
         <thead>
           <tr>
@@ -43,4 +43,20 @@ export default {
   opacity: 0;
   transform: translate(20px);
 }
+/* .ToolTracker {
+  margin: 20px;
+}
+.ToolTracker table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ToolTracker th,
+.ToolTracker td {
+  border: 1px solid lightgray;
+  padding: 10px;
+  text-align: center;
+}
+.ToolTracker th {
+  background-color: lightgray;
+} */
 </style>

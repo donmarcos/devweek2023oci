@@ -1,6 +1,10 @@
 <template>
   <div class="button">
-    <button v-if="health > 0 && this.resources.food > 0" @click="eatFood">
+    <button
+      class="heal-button"
+      v-if="health > 0 && this.resources.food > 0"
+      @click="eatFood"
+    >
       Eat Food
     </button>
     <div v-if="this.resources.food === 0">You have no food to eat</div>
@@ -34,7 +38,20 @@ export default {
 };
 </script>
 <style scoped>
-.button{
+.button {
   display: inline;
+}
+.heal-button {
+  padding: 8px 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+.heal-button:hover {
+  background-color: dimgrey;
+  color: aliceblue;
+  transition: all 0.7s;
+  transition-timing-function: ease-out;
 }
 </style>

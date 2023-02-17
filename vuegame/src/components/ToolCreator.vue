@@ -34,7 +34,22 @@ export default {
 </script>
 <style scoped>
 .toolCreatorButtons {
-  margin-top: 1rem;
   margin-left: 1rem;
+}
+.toolCreatorButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.toolCreatorButtons button {
+  padding: 10px 20px;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.toolCreatorButtons button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 </style>

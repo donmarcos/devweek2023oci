@@ -1,12 +1,19 @@
 <template>
   <div>
-    <div v-if="playerJoined && !playerLeft">
-      <div>Player Score:{{ this.playerScore }}</div>
-      <div>Opponent Score: {{ this.opponentScore }}</div>
-      <div>Current Game:{{ this.currentGame }}</div>
+    <div class="multiPlayerControls">
+      <div class="playerStats" v-if="playerJoined && !playerLeft">
+        <div>Player Score:{{ this.playerScore }}</div>
+        <div>Opponent Score: {{ this.opponentScore }}</div>
+        <div>Current Game:<br />{{ this.currentGame }}</div>
+      </div>
+      <div v-if="playerJoined && !gameEnded && !playerLeft" class="leaveGame">
+        <h3>Player has joined</h3>
+        <button @click="leaveGame()">Leave Current Game</button>
+      </div>
     </div>
 
     <div v-if="playerLeft">Player Left Game</div>
+
     <button v-if="playerLeft" @click="reloadPage">Close</button>
     <div v-if="gameEnded">
       <h3>Game Over</h3>
@@ -14,8 +21,6 @@
       <button @click="reloadPage">Close</button>
     </div>
     <div v-if="playerJoined && !gameEnded && !playerLeft">
-      <h3>Player has joined</h3>
-      <button @click="leaveGame()">Leave Current Game</button>
       <MultiPlayerGame />
     </div>
     <div v-if="!playerJoined">
@@ -24,7 +29,7 @@
         <button @click="joinedGame = !joinedGame">Cancel</button>
       </div>
 
-      <div v-if="!joinedGame">
+      <div class="matchMaking" v-if="!joinedGame">
         <div v-if="lookingForPlayers">Looking for players...</div>
         <button
           v-if="!lookingForPlayers && !showOpenGames"
@@ -46,16 +51,16 @@
         >
           Show Open Games
         </button>
-        <button v-if="showOpenGames" @click="showOpenGames = !showOpenGames">
-          Close
-        </button>
-        <button v-if="showOpenGames" @click="loadGames">Refresh</button>
+        <div class="openGames" v-if="showOpenGames">
+          <button @click="showOpenGames = !showOpenGames">Close</button>
+          <button @click="loadGames">Refresh</button>
 
-        <div v-if="showOpenGames">
-          <div>Games To Join:</div>
-          <div v-for="(game, index) in openGamesArray" :key="index">
-            <p>Game: {{ game.gameId }}</p>
-            <button @click="joinGame(game.gameId)">Join</button>
+          <div v-if="showOpenGames">
+            <div>Games To Join:</div>
+            <div v-for="(game, index) in openGamesArray" :key="index">
+              <p>Game: {{ game.gameId }}</p>
+              <button @click="joinGame(game.gameId)">Join</button>
+            </div>
           </div>
         </div>
       </div>
@@ -77,8 +82,6 @@ import {
   updateDoc,
   onSnapshot,
   limit,
-  deleteDoc,
-  arrayUnion,
 } from "firebase/firestore";
 import { useLogin } from "../stores/login";
 import { useGame } from "../stores/useGame";
@@ -246,38 +249,52 @@ export default {
       this.openGamesArray = [];
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-
         this.openGamesArray.push({ gameId: doc.id, gameData: doc.data() });
-        // console.log(this.openGamesArray);
       });
     },
-    // async getPlayerScore() {
-    //   const docRef = doc(db, "games", this.currentGame);
-    //   const docSnap = await getDoc(docRef);
-    //   if (docSnap.exists()) {
-    //     this.player1Score = docSnap.data().player1Score;
-    //     this.player2Score = docSnap.data().player2Score;
-    //     console.log("Document data:", docSnap.data());
-    //   } else {
-    //     // doc.data() will be undefined in this case
-    //     console.log("No such document!");
-    //   }
-    // },
   },
-  // async unmounted() {
-  //   const gameRef = doc(db, "games", this.currentGame);
-
-  //   await updateDoc(gameRef, {
-  //     completed: true,
-  //   });
-
-  //   this.lookingForPlayers = false;
-  //   this.joinedGame = false;
-  //   this.showOpenGames = false;
-  //   this.playerLeftGame();
-  //   this.currentGame = "";
-  // },
 };
 </script>
 
-<style></style>
+<style>
+button {
+  padding: 8px 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: dimgrey;
+  color: aliceblue;
+  transition: all 0.4s;
+  transition-timing-function: ease-out;
+}
+
+.matchMaking {
+  display: flex;
+  margin-top: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+.leaveGame {
+  position: fixed;
+  top: 10rem;
+  right: 4rem;
+}
+.playerStats {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 20rem;
+  right: 4rem;
+}
+.multiPlayerControls {
+  background-color: #f4f4f4;
+
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+}
+</style>

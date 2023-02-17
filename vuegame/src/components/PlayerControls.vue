@@ -1,48 +1,47 @@
 <template>
   <transition-group name="controls">
-    <div v-if="introIsFinished" class="playerControls">
-      <!-- <button @click="$emit('someEvent')">Click it</button> -->
-      <div>
+    <div v-if="introIsFinished" class="controls-container">
+      <div class="controls-header">
         <div>What would you like to do?</div>
-        <div class="buttons">
-          <button
+        <div class="action-buttons">
+          <Button
             v-if="!isGathering || !isBuilding || !isExploring"
             @click="isCurrentlyGathering"
-          >
-            Gather
-          </button>
-          <button
+            buttonText="Gather"
+          />
+
+          <Button
             v-if="!isGathering || !isBuilding || !isExploring"
             @click="isCurrentlyExploring"
-          >
-            Explore
-          </button>
-          <button
+            buttonText="Explore"
+          />
+
+          <Button
             v-if="!isGathering || !isBuilding || !isExploring"
             @click="isCurrentlyBuilding"
-          >
-            Build
-          </button>
-          <!-- <HealPlayer /> -->
+            buttonText="Build"
+          />
         </div>
-        <transition-group name="buildButtonGroup">
-          <div v-if="isBuilding" class="buildButtons">
-            <BuildShelter />
-            <ToolCreator />
-          </div>
-          <div v-if="isGathering">
-            <GatherResources @gather-resource="moveCube" />
-          </div>
-          <div v-if="isExploring">
-            <Exploration />
-          </div>
-        </transition-group>
       </div>
+      <transition-group name="buildButtonGroup">
+        <div v-if="isBuilding" class="build-container">
+          <BuildShelter />
+          <br />
+          <ToolCreator />
+        </div>
+        <div v-if="isGathering" class="gather-container">
+          <GatherResources @gather-resource="moveCube" />
+        </div>
+        <div v-if="isExploring" class="explore-container">
+          <Exploration />
+        </div>
+      </transition-group>
     </div>
   </transition-group>
 </template>
 
 <script>
+import Button from "./Button.vue";
 import ToolCreator from "./ToolCreator.vue";
 import BuildShelter from "./BuildShelter.vue";
 import GatherResources from "./GatherResources.vue";
@@ -57,6 +56,7 @@ export default {
     GatherResources,
     Exploration,
     HealPlayer,
+    Button,
   },
 
   data() {
@@ -70,9 +70,10 @@ export default {
   actions: {},
   mounted() {
     //timer to render player controls after into text is finished.
-    setInterval(() => {
+    let intervalId = setInterval(() => {
       this.introIsFinished = true;
-    }, 500);
+      clearInterval(intervalId);
+    }, 12500);
   },
 
   methods: {
@@ -100,9 +101,6 @@ export default {
 </script>
 
 <style scoped>
-.buttons {
-  display: inline;
-}
 .controls-enter-active,
 .controls-leave-active {
   transition: all 0.5s ease-out;
@@ -112,9 +110,53 @@ export default {
   opacity: 0;
   transform: translateX(40px);
 }
+.controls-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.playerControls {
-  margin-top: 2rem;
+.controls-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+/* 
+.gather-button,
+.explore-button,
+.build-button {
+  padding: 8px 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+} */
+.gather-button:hover,
+.explore-button:hover,
+.build-button:hover {
+  background-color: dimgrey;
+  color: aliceblue;
+  transition: all 0.7s;
+  transition-timing-function: ease-out;
+}
+
+.gather-container,
+.explore-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 </style>
 >

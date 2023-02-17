@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div v-if="gameOver">You Have Died</div>
-    <div v-if="health > 0">Health: {{ health }}</div>
+    <div v-if="gameOver && gameMode != 'multiPlayer'">You Have Died</div>
+    <div v-if="health > 0 && gameMode != 'multiPlayer'">
+      Health: {{ health }}
+    </div>
   </div>
 </template>
 
@@ -10,8 +12,8 @@ import { useGame } from "../stores/useGame";
 
 export default {
   setup() {
-    const { health, survival } = useGame();
-    return { health, survival };
+    const { health, survival, gameMode } = useGame();
+    return { health, survival, gameMode };
   },
   computed: {
     health() {
@@ -19,6 +21,9 @@ export default {
     },
     gameOver() {
       return this.survival.gameOver;
+    },
+    gameMode() {
+      return this.gameMode;
     },
   },
 };

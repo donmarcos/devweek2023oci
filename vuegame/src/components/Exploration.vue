@@ -53,6 +53,28 @@ export default {
 </script>
 <style scoped>
 .exploreButtons {
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 6rem;
+}
+.exploreButtons button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.exploreButtons button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.exploreButtons div {
+  font-size: 14px;
+  color: gray;
+  margin-top: 10px;
 }
 </style>

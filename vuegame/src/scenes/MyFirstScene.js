@@ -1,6 +1,7 @@
 import {
   Color3,
   Color4,
+  CubeTexture,
   Engine,
   FreeCamera,
   FresnelParameters,
@@ -8,12 +9,15 @@ import {
   MeshBuilder,
   ParticleSystem,
   Scene,
+  SceneLoader,
   StandardMaterial,
   Texture,
   Vector3,
 } from "@babylonjs/core";
-import Rock from "../assets/Rock.jpg";
+import "@babylonjs/loaders";
+import Rock from "../assets/Rock2.jpg";
 import sand from "../assets/sand.jpg";
+
 const myScene = {
   engine: null,
   scene: null,
@@ -23,37 +27,29 @@ const myScene = {
     myScene.engine = engine;
     myScene.scene = scene;
 
-    const camera = new FreeCamera("camera1", new Vector3(0, 5, -25), scene);
+    const camera = new FreeCamera("camera1", new Vector3(-10, 5, -40), scene);
     camera.setTarget(Vector3.Zero());
     camera.attachControl(canvas, true);
 
     new HemisphericLight("light", Vector3.Up(), scene);
 
-    // const boxRed = MeshBuilder.CreateBox("box-red", { size: 1 }, scene);
-    // const materialRed = new StandardMaterial("box-red-material", scene);
-    // materialRed.diffuseColor = Color3.Red();
-    // boxRed.material = materialRed;
-    // boxRed.position.x = -2;
-
-    // const boxBlue = MeshBuilder.CreateBox("box-yellow", { size: 1 }, scene);
-    // const materialYellow = new StandardMaterial("box-blue-material", scene);
-    // materialYellow.diffuseColor = Color3.Yellow();
-    // boxBlue.material = materialYellow;
-
-    // const boxGreen = MeshBuilder.CreateBox("box-green", { size: 1 }, scene);
-    // const materialGreen = new StandardMaterial("box-green-material", scene);
-    // materialGreen.diffuseColor = Color3.Green();
-    // boxGreen.material = materialGreen;
-    // boxGreen.position.x = 2;
-
     const ground = MeshBuilder.CreateGround(
       "ground",
-      { width: 200, height: 200 },
+      { width: 1000, height: 1000 },
       scene
     );
     ground.material = new StandardMaterial("groundMaterial", scene);
     ground.material.diffuseColor = new Color3(0.03, 0.48, 0.79, 0.83);
     ground.position.y = -14.1;
+
+    const envTex = CubeTexture.CreateFromPrefilteredData(
+      "./environment/sky.env",
+      scene
+    );
+
+    scene.environmentTexture = envTex;
+
+    scene.createDefaultSkybox(envTex, true);
 
     const island = MeshBuilder.CreateSphere(
       "island",
@@ -69,7 +65,21 @@ const myScene = {
       scene
     );
     island2.position.y = -55;
-    island2.position.x = -3;
+    island2.position.x = -2;
+
+    const island3 = MeshBuilder.CreateSphere(
+      "island",
+      { diameter: 500, segments: 15 },
+      scene
+    );
+    island3.position.y = -245;
+    island3.position.x = -15;
+    island3.position.z = 100;
+
+    const island4 = island3.clone("island4");
+    island4.position.y = -245;
+    island4.position.x = 150;
+    island4.position.z = 65;
 
     const groundMaterial = new StandardMaterial("ground", scene);
     groundMaterial.diffuseTexture = new Texture(sand, scene);
@@ -78,6 +88,8 @@ const myScene = {
     groundMaterial.specularColor = new Color3(0, 0, 0);
     island.material = groundMaterial;
     island2.material = groundMaterial;
+    island3.material = groundMaterial;
+    island4.material = groundMaterial;
 
     const ring = MeshBuilder.CreateTorus(
       "ring",
@@ -172,7 +184,7 @@ const myScene = {
     fireSystem.minSize = 1;
     fireSystem.maxSize = 2;
     fireSystem.minLifeTime = 1;
-    fireSystem.maxLifeTime = 40;
+    fireSystem.maxLifeTime = 10;
     fireSystem.emitRate = 300;
     fireSystem.blendMode = ParticleSystem.BLENDMODE_ONEONE;
     fireSystem.gravity = new Vector3(0, 0, 0);
@@ -237,6 +249,8 @@ const myScene = {
     stickTemplate.isVisible = false;
     stickTemplate.material = stickMaterial;
 
+    this.createTree();
+
     window.addEventListener("click", function () {
       smokeSystem.start();
       fireSystem.start();
@@ -254,6 +268,29 @@ const myScene = {
     if (mesh) {
       mesh.position = new Vector3(x, y, z);
     }
+  },
+
+  createTree: function () {
+    SceneLoader.ImportMesh(
+      "",
+      "./models/",
+      "coconut-tree.babylon",
+      this.scene,
+      (meshes) => {
+        console.log(meshes);
+        meshes[1].scaling.z = 0.1;
+        meshes[1].scaling.y = 0.1;
+        meshes[1].scaling.x = 0.2;
+        meshes[1].position.x = 80;
+        meshes[1].position.y = 5;
+        meshes[1].position.z = -1;
+
+        const tree2 = meshes[1].clone("tree2");
+        tree2.position.x = 20;
+        tree2.position.z = 40;
+        tree2.rotation.x = 2;
+      }
+    );
   },
   setStick: function (name) {
     const mesh = this.scene.getMeshByName(name);

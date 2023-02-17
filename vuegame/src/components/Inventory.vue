@@ -54,7 +54,7 @@ export default {
     let intervalId = setInterval(() => {
       this.isIntroComplete = true;
       clearInterval(intervalId);
-    }, 14000);
+    }, 13500);
   },
 };
 </script>
@@ -62,12 +62,19 @@ export default {
 <style>
 .inventory {
   position: fixed;
-  margin-top: 3rem;
+  top: 10rem;
+
+  margin-left: 4rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
 
-  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+
   width: 10rem;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="introMessage">
     <br />
     <transition-group name="message" tag="div">
       <div :key="currentIndex">
@@ -41,11 +41,15 @@ export default {
 <style scoped>
 .message-enter-active,
 .message-leave-active {
-  transition: all 0.5s ease-out;
+  transition: all 0.6s ease-in-out;
 }
 .message-enter-from,
 .message-leave-to {
   opacity: 0;
   transform: translateX(40px);
+}
+.introMessage {
+  position: fixed;
+  top: 6rem;
 }
 </style>

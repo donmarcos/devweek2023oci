@@ -5,8 +5,10 @@
       <DangerHandler />
 
       <Inventory />
+      <div class="story">
+        <Story />
+      </div>
 
-      <Story />
       <BabylonScene />
       <div class="playerControls">
         <PlayerControls />

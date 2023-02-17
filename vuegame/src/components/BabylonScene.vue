@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <canvas ref="bjsCanvas" width="700" height="350" />
+  <div class="babylonScene" v-if="!introIsFinished">
+    <canvas ref="bjsCanvas" width="800" height="450" />
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import myScene from "../scenes/MyFirstScene";
 
 export default {
   name: "BabylonScene",
+
   props: {
     position: {
       type: Object,
@@ -16,6 +17,11 @@ export default {
         return { x: 0, y: 0, z: 0 };
       },
     },
+  },
+  data() {
+    return {
+      introIsFinished: false,
+    };
   },
 
   watch: {
@@ -27,9 +33,16 @@ export default {
   },
   mounted() {
     const bjsCanvas = this.$refs.bjsCanvas;
+
     if (bjsCanvas) {
       myScene.createScene(bjsCanvas);
     }
   },
 };
 </script>
+
+<style scoped>
+/* .babylonScene {
+  margin-top: 50px;
+} */
+</style>

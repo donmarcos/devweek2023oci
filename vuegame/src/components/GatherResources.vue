@@ -85,6 +85,26 @@ export default {
 </script>
 <style scoped>
 .gatherButtons {
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.gatherButtons button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.gatherButtons button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+.gatherButtons div {
+  font-size: 14px;
+  color: gray;
+  margin-top: 10px;
 }
 </style>

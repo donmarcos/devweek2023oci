@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!gameOver">
+  <div v-if="!gameOver" class="timeTracker">
     <p>Days Survived: {{ timeSurvived }}</p>
   </div>
 </template>
@@ -8,9 +8,20 @@
 import { useGame } from "../stores/useGame";
 
 export default {
+  data() {
+    return {
+      introIsFinished: false,
+    };
+  },
   setup() {
     const { survival, gameOver } = useGame();
     return { survival, gameOver };
+  },
+  mounted() {
+    let intervalId = setInterval(() => {
+      this.introIsFinished = true;
+      clearInterval(intervalId);
+    }, 12500);
   },
   computed: {
     timeSurvived() {
@@ -20,13 +31,10 @@ export default {
       return this.gameOver;
     },
   },
-  created() {
-    // setInterval(() => {
-    //   const { timeSurvived, winConditionsMet } = useGame();
-    //   if (timeSurvived >= winConditionsMet) {
-    //     // end the game
-    //   }
-    // }, 1000);
-  },
 };
 </script>
+<style scoped>
+.timeTracker {
+  margin-top: 4rem;
+}
+</style>

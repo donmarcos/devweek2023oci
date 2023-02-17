@@ -1,5 +1,5 @@
 <template>
-  <div class="game">
+  <div class="gameContainer">
     <div v-if="!gameOver && !gameWon">
       <TimeTracker />
       <DangerHandler />
@@ -106,7 +106,15 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+html,
+body {
+  margin: 0;
+  height: 100vh;
+}
 
+/* .game {
+  background-color: rgb(115, 115, 191);
+} */
 .healthTracker {
   display: flex;
 
@@ -121,6 +129,11 @@ export default {
 }
 .storyLines {
   padding-bottom: 50px;
+}
+.babylonScene {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .toolTracker {
   padding: 1.5rem;
