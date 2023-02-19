@@ -150,9 +150,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
-[Node.js]: https://nodejs.org/en/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Node.js]: https://img.shields.io/badge/Node-FF2D20?style=for-the-badge&logo=Node&logoColor=white
 [Node-url]: https://img.shields.io/badge/Node-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Babylon.js]: https://www.babylonjs.com/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Babylon.js]: https://img.shields.io/badge/Babylon-0769AD?style=for-the-badge&logo=Andela&logoColor=white
 [Babylon-url]: https://www.babylonjs.com/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org
