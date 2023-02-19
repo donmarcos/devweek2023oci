@@ -150,7 +150,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
-[Node.js]: https://img.shields.io/badge/Node-FF2D20?style=for-the-badge&logo=Node&logoColor=white
+[Node.js]: https://img.shields.io/badge/Node-FF2D20?style=for-the-badge&logo=Node.js&logoColor=white
 [Node-url]: https://nodejs.org
 [Babylon.js]: https://img.shields.io/badge/Babylon-0769AD?style=for-the-badge&logo=Andela&logoColor=white
 [Babylon-url]: https://www.babylonjs.com/
