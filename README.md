@@ -156,7 +156,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Babylon-url]: https://www.babylonjs.com/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org
-[Terraform.io]: https://img.shields.io/badge/Terraform.io-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Terraform.io]: https://img.shields.io/badge/Terraform-4A4A55?style=for-the-badge&logo=Terraform&logoColor=FF3E00
 [Terraform-url]: https://www.terraform.io/
-[Docker.com]: https://img.shields.io/badge/Docker.com-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Docker.com]: https://img.shields.io/badge/Docker.com-35495E?style=for-the-badge&logo=docker&logoColor=4FC08D
 [Docker-url]: https://www.docker.com/
