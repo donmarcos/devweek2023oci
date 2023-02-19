@@ -1,6 +1,6 @@
 # devweek2023oci
 Developer Week Hackathon  2023  OCI game challenge
-<!-- Improved compatibility of back to top link: See: https://github.com/donmarcos/Best-README-Template/pull/73 -->
+<!-- Improved compatibility of back to top link: See: https://github.com/donmarcos/devweek2023oci/pull/73 -->
 <a name="readme-top"></a>
 
 
@@ -134,16 +134,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/donmarcos/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/donmarcos/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/donmarcos/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/donmarcos/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/donmarcos/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/donmarcos/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/donmarcos/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/donmarcos/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/donmarcos/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/donmarcos/Best-README-Template/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/donmarcos/devweek2023oci.svg?style=for-the-badge
+[contributors-url]: https://github.com/donmarcos/devweek2023oci/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/donmarcos/devweek2023oci.svg?style=for-the-badge
+[forks-url]: https://github.com/donmarcos/devweek2023oci/network/members
+[stars-shield]: https://img.shields.io/github/stars/donmarcos/devweek2023oci.svg?style=for-the-badge
+[stars-url]: https://github.com/donmarcos/devweek2023oci/stargazers
+[issues-shield]: https://img.shields.io/github/issues/donmarcos/devweek2023oci.svg?style=for-the-badge
+[issues-url]: https://github.com/donmarcos/devweek2023oci/issues
+[license-shield]: https://img.shields.io/github/license/donmarcos/devweek2023oci.svg?style=for-the-badge
+[license-url]: https://github.com/donmarcos/devweek2023oci/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/donmarcos
 [product-screenshot]: images/screenshot.png
