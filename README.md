@@ -151,7 +151,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
 [Node.js]: https://img.shields.io/badge/Node-FF2D20?style=for-the-badge&logo=Node&logoColor=white
-[Node-url]: https://img.shields.io/badge/Node-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Node-url]: https://nodejs.org
 [Babylon.js]: https://img.shields.io/badge/Babylon-0769AD?style=for-the-badge&logo=Andela&logoColor=white
 [Babylon-url]: https://www.babylonjs.com/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
