@@ -160,3 +160,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Terraform-url]: https://www.terraform.io/
 [Docker.com]: https://img.shields.io/badge/Docker.com-35495E?style=for-the-badge&logo=docker&logoColor=4FC08D
 [Docker-url]: https://www.docker.com/
+[Docker.com]: https://img.shields.io/badge/OracleCloud-35495E?style=for-the-badge&logo=Oracle&logoColor=4FC08D
+[Docker-url]: https://cloud.oracle.com/
