@@ -89,7 +89,7 @@ Developer Week Hackathon  2023  OCI game challenge
 * [![Babylon][Babylon.js]][Babylon-url]
 * [![Terraform][Terraform.io]][Terraform-url]
 * [![Docker][Docker.com]][Docker-url]
-
+* [![OCI][OracleCloud.com]][OracleCloud-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -160,5 +160,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Terraform-url]: https://www.terraform.io/
 [Docker.com]: https://img.shields.io/badge/Docker.com-35495E?style=for-the-badge&logo=docker&logoColor=4FC08D
 [Docker-url]: https://www.docker.com/
-[Docker.com]: https://img.shields.io/badge/OracleCloud-35495E?style=for-the-badge&logo=Oracle&logoColor=4FC08D
-[Docker-url]: https://cloud.oracle.com/
+[OracleCloud.com]: https://img.shields.io/badge/OracleCloud-35495E?style=for-the-badge&logo=Oracle&logoColor=4FC08D
+[OracleCloud-url]: https://cloud.oracle.com/
