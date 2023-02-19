@@ -28,12 +28,9 @@ Developer Week Hackathon  2023  OCI game challenge
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Developer Week Hackathon  2023  OCI game challenge</h3>
 
   <p align="center">
-    # devweek2023oci
-    Developer Week Hackathon  2023  OCI game challenge
-
     <br />
     <a href="https://github.com/donmarcos/devweek2023oci"><strong>Explore the docs</strong></a>
     <br />
